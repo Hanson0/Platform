@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4283A239-8395-4BD5-974B-FCAB704C84FB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AILinkFactoryAuto</RootNamespace>
+    <AssemblyName>AILinkFactoryAuto.Base</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\AILinkFactoryAuto\bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\log4net.2.0.8\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MesDll, Version=4.0.2.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\MesDll.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ResultProperties.cs" />
+    <Compile Include="Common\Ini.cs" />
+    <Compile Include="Common\TestTime.cs" />
+    <Compile Include="Peripherals\Robot.cs" />
+    <Compile Include="Utils\WtInfoUtils.cs" />
+    <Compile Include="Core\CountLatch.cs" />
+    <Compile Include="Task\Executer\CheckMacConsistencyExecuter.cs" />
+    <Compile Include="Task\Executer\CheckPlusOneRelationExecuter.cs" />
+    <Compile Include="Task\Executer\SyncExecuter.cs" />
+    <Compile Include="Task\Executer\FindDutExecuter.cs" />
+    <Compile Include="Task\Property\CheckMacConsistencyProperties.cs" />
+    <Compile Include="Task\Property\CheckPlusOneRelationProperties.cs" />
+    <Compile Include="Task\Property\FindDutProperties.cs" />
+    <Compile Include="Task\Property\SyncProperties.cs" />
+    <Compile Include="View\FormAddKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormAddKey.Designer.cs">
+      <DependentUpon>FormAddKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormDictionaryEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormDictionaryEditor.Designer.cs">
+      <DependentUpon>FormDictionaryEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormScanCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormScanCode.Designer.cs">
+      <DependentUpon>FormScanCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormUserConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormUserConfirm.Designer.cs">
+      <DependentUpon>FormUserConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Box.cs" />
+    <Compile Include="Core\Dut.cs" />
+    <Compile Include="Core\HttpClient\ContentType.cs" />
+    <Compile Include="Core\HttpClient\HttpMethod.cs" />
+    <Compile Include="Core\HttpClient\HttpTools.cs" />
+    <Compile Include="Core\HttpClient\IRestClient.cs" />
+    <Compile Include="Core\HttpClient\IRestResponse.cs" />
+    <Compile Include="Core\HttpClient\IRestResponseGet.cs" />
+    <Compile Include="Core\HttpClient\IRestResponseSet.cs" />
+    <Compile Include="Core\HttpClient\RestClient.cs" />
+    <Compile Include="Core\HttpClient\RestParam.cs" />
+    <Compile Include="Core\HttpClient\RestResponse.cs" />
+    <Compile Include="Core\ILog.cs" />
+    <Compile Include="Core\ILogFile.cs" />
+    <Compile Include="Core\IPlugin.cs" />
+    <Compile Include="Core\IRunnable.cs" />
+    <Compile Include="Core\LogFile.cs" />
+    <Compile Include="Core\WinApi.cs" />
+    <Compile Include="Core\JsonTestSequence.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\BaseException.cs" />
+    <Compile Include="Task\Executer\CheckMaterialInfoExecuter.cs" />
+    <Compile Include="Task\Executer\ConditionExecuter.cs" />
+    <Compile Include="Task\Executer\DeinitExecuter.cs" />
+    <Compile Include="Task\Executer\ExeExecuter.cs" />
+    <Compile Include="Task\Executer\IExecuter.cs" />
+    <Compile Include="Task\Executer\InitExecuter.cs" />
+    <Compile Include="Task\Executer\MesFetchSnExecuter.cs" />
+    <Compile Include="Task\Executer\MesPreCheckExecuter.cs" />
+    <Compile Include="Task\Executer\ParseLabelExecuter.cs" />
+    <Compile Include="Task\Executer\PrintLabelExecuter.cs" />
+    <Compile Include="Task\Executer\ReadMacNetCardExecuter.cs" />
+    <Compile Include="Task\Executer\ScanCodeExecuter.cs" />
+    <Compile Include="Task\Executer\SleepExecuter.cs" />
+    <Compile Include="Task\Executer\UserConfirmExecuter.cs" />
+    <Compile Include="Task\FailResultException.cs" />
+    <Compile Include="Task\GlobalDic.cs" />
+    <Compile Include="Task\GlobalVaribles.cs" />
+    <Compile Include="Task\Property\CheckMaterialInfoProperties.cs" />
+    <Compile Include="Task\Property\CommonProperties.cs" />
+    <Compile Include="Task\Property\ConditionProperties.cs" />
+    <Compile Include="Task\Property\Converter\ConditionItemConverter.cs" />
+    <Compile Include="Task\Property\Converter\DictionaryUiTypeEditor.cs" />
+    <Compile Include="Task\Property\Converter\KeyValueConverter.cs" />
+    <Compile Include="Task\Property\Converter\LimitConverter.cs" />
+    <Compile Include="Task\Property\DeinitProperties.cs" />
+    <Compile Include="Task\Property\ExeProperties.cs" />
+    <Compile Include="Task\Property\InitProperties.cs" />
+    <Compile Include="Task\Property\IProperties.cs" />
+    <Compile Include="Task\Property\KeyValue.cs" />
+    <Compile Include="Task\Property\LimitProperties.cs" />
+    <Compile Include="Task\Property\MesFetchSnProperties.cs" />
+    <Compile Include="Task\Property\MesPreCheckProperties.cs" />
+    <Compile Include="Task\Property\ParseLabelProperties.cs" />
+    <Compile Include="Task\Property\PrintLabelProperties.cs" />
+    <Compile Include="Task\Property\ReadMacNetCardProperties.cs" />
+    <Compile Include="Task\Property\ScanCodeProperties.cs" />
+    <Compile Include="Task\Property\SleepProperties.cs" />
+    <Compile Include="Task\Property\UserConfirmProperties.cs" />
+    <Compile Include="Task\TaskItem.cs" />
+    <Compile Include="Utils\HardwareUtils.cs" />
+    <Compile Include="Utils\IGenJts.cs" />
+    <Compile Include="Utils\JtsUtils.cs" />
+    <Compile Include="Common\Limit.cs" />
+    <Compile Include="Utils\LogUtils.cs" />
+    <Compile Include="Utils\TaskItemManager.cs" />
+    <Compile Include="Utils\TimeUtils.cs" />
+    <Compile Include="Utils\WifiUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\FormAddKey.resx">
+      <DependentUpon>FormAddKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormDictionaryEditor.resx">
+      <DependentUpon>FormDictionaryEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormScanCode.resx">
+      <DependentUpon>FormScanCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormUserConfirm.resx">
+      <DependentUpon>FormUserConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

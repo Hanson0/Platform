@@ -1,0 +1,13 @@
+/projects/
+/StudioLog/
+/temp/
+
+*.dll
+*.pdb
+*.xml
+*.lib
+*.ini
+*.config
+*.exe
+*.txt
+*.zip
